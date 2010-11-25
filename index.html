@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <title>Demo jQuery Plugin Tagada</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="./jquery.tagada.css" type="text/css" />
+        <script type="text/javascript" src="./jquery-1.4.4.js"></script>
+        <script type="text/javascript" src="./jquery.tagada.js"></script>
+        <script type="text/javascript">
+            $(function() {
+	
+				$('input.tagada').tagada();
+				
+                $("#simpleform").submit(function(event) {
+                    // key enter
+                    if (event.keyCode == '13') 
+					{ 
+						event.preventDefault(); 
+					} 
+                    return false;
+                });
+            })
+        </script> 
+    </head>
+    <body>
+        <form action="" name="simpleform" id="simpleform" method="POST">
+            <fieldset>
+                <legend>Add new post</legend>
+                <p>
+                    <label for="title">Title</label><br/>
+                    <input type="text" name="title" id="title" />
+                </p>
+                <p>
+                    <label for="body">Body</label><br/>
+                    <textarea name="body" id="body" rows="4" cols="20">
+                    </textarea>
+                </p>
+                <p>
+                    <label for="categories-tags">Category Tags</label><br />
+                    <input type="text" name="categories_tags" id="categories-tags" value="" class="tagada"/>
+                    <small>Type <kbd>[enter]</kbd>,<kbd>[tab]</kbd> or <kbd>[comma]</kbd> to add a tag</small>
+                </p>
+
+				<p>
+                    <label for="tags">Regular Tags</label><br />
+                    <input type="text" name="tags" id="tags" value="" class="tagada"/>
+                    <small>Type <kbd>[enter]</kbd>,<kbd>[tab]</kbd> or <kbd>[comma]</kbd> to add a tag</small>
+                </p>
+                <input type="submit" name="simplesubmit">
+            </fieldset>
+        </form>
+    </body>
+</html>

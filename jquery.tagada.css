@@ -1,0 +1,26 @@
+span.tagada-tag
+{
+    background-color:#ED5654;
+    border:1px solid red;
+    color:white;
+    font-weight:bold;
+    margin:0 5px;
+    padding:2px 5px;
+    text-shadow:0 1px 1px #333333;
+    font-size: 0.9em;
+	font-family: Helvetica, Arial, sans-serif;
+	-moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+	border-radius: 4px;
+}
+
+span.tagada-tag > a.tagada-tag-close
+{
+    margin-left: 0.5em;
+    cursor: pointer;
+}
+
+a.tagada-tag-close:hover
+{
+    color: black;
+}
