@@ -26,6 +26,11 @@ TODO
             $(this).keydown(function (event) {
 				console.log('>> which: ', event.which, ' >> keyCode: ', event.keyCode, '>> charCode: ', event.charCode);
 				
+				// key backspace pressed
+				if (!$(this).val() && event.keyCode == '8' ) {
+					$('span.tagada-tag').last().trigger('delete');
+				}
+				
                 // key enter, tab and comma pressed
                 if ($(this).val() != '' && (event.keyCode == '13' || event.keyCode == '9' || event.keyCode == '188')) {
                     event.preventDefault();
@@ -68,6 +73,8 @@ TODO
 							data_list.splice(i, 1);	
 							return data_list.join(',');
 						});
+						
+						console.log($tags.data($tag_list));
                     })
 					.append($("<a/>", {
                         'class': 'tagada-tag-close',
@@ -84,6 +91,8 @@ TODO
 						data_list.push($tag);
 						return data_list.join(',');
 					});
+					
+					console.log($tags.data($tag_list));
 					
                     // reset input tag value
                     $(this).val('');
